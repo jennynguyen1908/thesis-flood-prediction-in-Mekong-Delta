@@ -1,7 +1,7 @@
 import os
 import rasterio
 import numpy as np
-from rasterio.warp import calculate_default_transform, reproject, Resampling
+from rasterio.warp import reproject, Resampling
 
 # Transform all images to match the first image of the landmap
 # 1. Open the first image as the Master image
@@ -36,17 +36,17 @@ def transform_coor(ref_image, image_path, image, save_path):
         dst.write(destination_data)
 
 # Make new folder 
-new_path = "./dataset/processed_flood_map/"
+new_path = "./data/03_aligned/flood_map_aligned/"
 
 if not os.path.exists(new_path):
     os.makedirs(new_path)
 
 # Read flood maps
-water_path = "./dataset/flood_map/"
+water_path = "./02_interim/flood_map_clean/"
 water_images = sorted(os.listdir(water_path))
 
 # Read land images
-land_path = "./dataset/land_map/"
+land_path = "./01_raw/raw_land_map/"
 land_images = sorted(os.listdir(land_path))
 ref_image = land_images[0]
 
@@ -56,7 +56,7 @@ for image in water_images:
 
 # ------------------------------------------------
 # Test if all files match with the reference image
-ref_path = "./dataset/land_map/" + land_images[0]
+ref_path = land_path + land_images[0]
 
 with rasterio.open(ref_path) as master:
     m_res = master.res
