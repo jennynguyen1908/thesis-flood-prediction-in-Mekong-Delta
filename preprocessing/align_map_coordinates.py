@@ -6,7 +6,7 @@ from rasterio.warp import reproject, Resampling
 # Transform all images to match the first image of the landmap
 # 1. Open the first image as the Master image
 def transform_coor(ref_image, image_path, image, save_path):
-    ref_path = "./dataset/land_map/"
+    ref_path = "../data/01_raw/raw_land_map/"
     with rasterio.open(ref_path + ref_image) as master:
         master_profile = master.profile
         master_kwarg = master_profile.copy()
@@ -36,17 +36,17 @@ def transform_coor(ref_image, image_path, image, save_path):
         dst.write(destination_data)
 
 # Make new folder 
-new_path = "./data/03_aligned/flood_map_aligned/"
+new_path = "../data/03_aligned/flood_map_aligned/"
 
 if not os.path.exists(new_path):
     os.makedirs(new_path)
 
 # Read flood maps
-water_path = "./02_interim/flood_map_clean/"
+water_path = "../data/02_interim/flood_map_clean/"
 water_images = sorted(os.listdir(water_path))
 
 # Read land images
-land_path = "./01_raw/raw_land_map/"
+land_path = "../data/01_raw/raw_land_map/"
 land_images = sorted(os.listdir(land_path))
 ref_image = land_images[0]
 
@@ -92,6 +92,6 @@ for filename in os.listdir(new_path):
             print(f"⚠️ Error reading {filename}: {e}")
 
 if not mismatched:
-    print("\n✅ ALL CLEAR: All images match the master spatial profile.")
+    print("\n✅ ALL CLEAR: All images are aligned with the reference image.")
 else:
     print(f"\nSummary: {len(mismatched)} files do not match the master template.")
