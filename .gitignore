@@ -1,7 +1,3 @@
 # Ignore the data directory
-data/
-
-# Specifically block all image formats
-*.tif
-*.tiff
-*.hdr
+data/*
+!data/01_raw/
