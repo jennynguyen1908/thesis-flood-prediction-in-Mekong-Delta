@@ -18,7 +18,7 @@
 5. Saving the data into tabular formats.
 
 ## 🎯 Research questions
-1. Comparing `**SARIMA**`, `**LSTM**` and `**GRU**` using historical flood data as input.
-2. Comparing `**LSTM with time-series input` ** and `**LSTM with timeseries + land-use inputs` **.
+1. Comparing `SARIMA`, `LSTM` and `GRU` using historical flood data as input.
+2. Comparing `LSTM with time-series input` and `LSTM with timeseries + land-use inputs`.
 
 ## Repository structure
