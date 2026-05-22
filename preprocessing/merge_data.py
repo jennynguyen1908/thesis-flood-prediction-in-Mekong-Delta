@@ -10,6 +10,8 @@ df_land = df_land.sort_values("x_coord")
 
 # Merge water and land data
 df = pd.merge(df_water, df_land, on=["x_coord", "y_coord", "year"], how="left")
+# Align the date value for year 2017
+df.loc[df["date"]==28, "date"] = 289
 # Create a datetime column
 df["date_time"] = pd.to_datetime(df["year"].astype(str) + df["date"].astype(str), format="%Y%j")
 df = df.sort_values("date_time")
