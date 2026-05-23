@@ -19,8 +19,10 @@ df = df.sort_values("date_time")
 df.to_csv("./data/04_processed/flood_land_data.csv")
 # Split data into training, validation and testing set
 train_df = df[(df["year"] >= 2000) & (df["year"] < 2017)]
-test_df = df[df["year"] >= 2017]
+sarima_test_df = df[df["year"] >= 2017]
+dl_test_df = df[df["year"] >= 2016]
 
-# Save as separate CSVs
-train_df.to_csv("./data/04_processed/train.csv", index=False)
-test_df.to_csv("./data/04_processed/test.csv", index=False)
+# Save as separate csv files
+train_df.to_csv("train.csv", index=False)
+sarima_test_df.to_csv("sarima_test.csv", index=False)
+dl_test_df.to_csv("dl_test.csv", index=False)
