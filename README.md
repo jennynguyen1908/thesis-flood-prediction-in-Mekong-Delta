@@ -5,6 +5,7 @@
 - This project aims to explore time-series models in predicting flood extent in the Vietnamese Mekong Delta using grid-based approach.
 
 ## Repository structure
+```
 ├── data/                         # Input and processed datasets
 │   ├── 01_raw/                   # Original images
 │   ├── 02_interim/               # Fixing inconsistent image format
@@ -33,6 +34,7 @@
 │
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # Project documentation
+```
 
 ## 🗂️ Dataset description
 - This project uses datasets from the research titled ["Datasets of land use change and flood dynamics in the Vietnamese Mekong Delta"](https://www.sciencedirect.com/science/article/pii/S235234092200470X)(Vu et al., 2022).
