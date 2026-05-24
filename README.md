@@ -4,7 +4,7 @@
 - This repository contains the code and data used for my master's thesis on flood prediction.
 - This project aims to explore time-series models in predicting flood extent in the Vietnamese Mekong Delta using grid-based approach.
 
-## Repository structure
+## 🌳 Repository structure
 ```
 ├── data/                         # Input and processed datasets
 │   ├── 01_raw/                   # Original images
