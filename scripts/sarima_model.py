@@ -127,5 +127,3 @@ performance_df = test.merge(
 )
 
 performance_df.to_csv("./performance/sarima_test_predictions.csv")
-
-print("SARIMA model performance on test set is saved ✅")

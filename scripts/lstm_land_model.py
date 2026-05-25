@@ -152,5 +152,3 @@ test_results = coords_test.copy()
 test_results["actual"] = y_test.reshape(-1)
 test_results["predicted"] = test_predict.reshape(-1)
 test_results.to_csv("../performance/lstm_land_test_predictions.csv", index=False)
-
-print("LSTM + land-use model performance is saved ✅")

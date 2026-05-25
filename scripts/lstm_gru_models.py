@@ -140,8 +140,6 @@ lstm_test_results["actual"] = y_test.reshape(-1)
 lstm_test_results["predicted"] = lstm_test_predict.reshape(-1)
 lstm_test_results.to_csv("../performance/lstm_test_predictions.csv", index=False)
 
-print("LSTM model performance is saved ✅")
-
 # GRU model
 
 gru_model = Sequential()
@@ -200,5 +198,3 @@ gru_test_results = coords_test.copy()
 gru_test_results["actual"] = y_test.reshape(-1)
 gru_test_results["predicted"] = gru_test_predict.reshape(-1)
 gru_test_results.to_csv("../performance/gru_test_predictions.csv", index=False)
-
-print("GRU model performance is saved ✅")

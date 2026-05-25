@@ -34,6 +34,26 @@
 │
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # Project documentation
+├── makefile                      # Makefile 
+```
+
+## 🔁 How to run
+Two options to reproduce the results:
+1. Full workflow (with image extraction)
+- Note: this option will take longer because the data extraction from images will be performed
+- Use the following command to run
+```
+make all
+```
+2. Faster workflow (without image extraction)
+- Note: this option will skip the data extraction step
+- Use the following command to run
+```
+make models
+```
+3. Verify output
+```
+All training completed and results are saved 🎉
 ```
 
 ## 🗂️ Dataset description
